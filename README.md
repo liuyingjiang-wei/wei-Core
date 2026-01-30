@@ -23,9 +23,9 @@ wei-Core 模块的核心能力是热榜查询，支持通过 MCP 工具或 HTTP 
 ## 安装与使用
 
 ### 安装
-‘’‘bash
+```bash
 git clone https://github.com/XRK-AGT/wei-Core.git
-
+```
 ### 使用方法
 
 #### 通过 MCP 工具调用
