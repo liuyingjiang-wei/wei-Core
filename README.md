@@ -63,6 +63,55 @@ wei-Core 模块已集成到 XRK-AGT 项目中，无需单独安装。
 | 插件名称 | 类型 | 功能说明 | 文件路径 |
 |---------|------|---------|----------|
 | hotboard | stream | 热榜查询工作流，支持多个平台的实时热榜数据 | stream/hotboard.js |
+| hotboard | http | 热榜查询 API，提供 RESTful 接口获取热榜数据 | http/hotboard.js |
+
+## HTTP API
+
+### 接口列表
+
+| 接口路径 | 方法 | 功能说明 | 参数 |
+|---------|------|---------|------|
+| `/api/hotboard` | GET | 获取指定平台的热榜数据 | `type` (平台类型，如 weibo、bilibili 等) |
+| `/api/hotboard/platforms` | GET | 获取支持的平台列表 | 无 |
+
+### 返回格式
+
+```json
+{
+  "success": true,
+  "message": "操作成功",
+  "type": "weibo",
+  "update_time": "2026-01-30 21:41:25",
+  "list": [
+    {
+      "index": 1,
+      "title": "警方通报金晨事件",
+      "hot_value": "4977568",
+      "url": "https://s.weibo.com/weibo?q=%23%E8%AD%A6%E6%96%B9%E9%80%9A%E6%8A%A5%E9%87%91%E6%99%A8%E4%BA%8B%E4%BB%B6%23"
+    }
+  ]
+}
+```
+
+## WWW 业务层
+
+### 热榜查询页面
+
+- **访问路径**：`/wei-Core/www/hotboard`
+- **功能**：提供直观的热榜查询界面，支持按分类选择平台，实时显示热榜数据
+- **特点**：
+  - 响应式设计，适配桌面和移动设备
+  - 分类展示平台，方便用户选择
+  - 实时显示热榜排名、标题和热度
+  - 支持刷新功能，获取最新数据
+
+### 页面结构
+
+| 文件名称 | 功能说明 |
+|---------|---------|
+| `index.html` | 页面 HTML 结构 |
+| `styles.css` | 页面样式 |
+| `app.js` | 前端交互逻辑 |
 
 ## 技术实现
 
