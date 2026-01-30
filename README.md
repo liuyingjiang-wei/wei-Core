@@ -1,10 +1,10 @@
 # wei-Core
 
-wei-Core 是 XRK-AGT 平台的一个核心模块，提供热榜查询等实用功能。
+wei-Core 是 XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态。
 
 ## 模块简介
 
-wei-Core 模块专注于提供热榜查询功能，支持多个主流平台的实时热榜数据获取，方便用户快速了解网络热点。
+wei-Core 模块的核心能力是热榜查询，支持通过 MCP 工具或 HTTP API 获取多平台的实时热榜数据。该模块设计简洁高效，为用户提供了便捷的热点信息获取方式。
 
 ## 功能说明
 
@@ -12,17 +12,19 @@ wei-Core 模块专注于提供热榜查询功能，支持多个主流平台的�
 
 通过 `hotboard` 工作流插件，可查询以下平台的热榜数据：
 
-- **视频/社区**：bilibili、acfun、weibo、zhihu、douyin、kuaishou、douban-movie、tieba、hupu、v2ex 等
-- **新闻/资讯**：baidu、thepaper、toutiao、qq-news、sina、netease-news、huxiu 等
-- **技术/IT**：sspai、ithome、juejin、jianshu、guokr、36kr、51cto、csdn 等
-- **游戏**：lol、genshin、honkai、starrail 等
-- **其他**：weread、weatheralarm、earthquake、history 等
+#### 支持的平台分类
+
+- **视频/社区**：bilibili, acfun, weibo, zhihu, douyin, kuaishou, douban-movie, tieba, hupu, v2ex
+- **新闻/资讯**：baidu, thepaper, toutiao, qq-news, sina, netease-news, huxiu
+- **技术/IT**：sspai, ithome, juejin, jianshu, guokr, 36kr, 51cto, csdn
+- **游戏**：lol, genshin, honkai, starrail
+- **其他**：weread, weatheralarm, earthquake, history
 
 ## 安装与使用
 
 ### 安装
 
-wei-Core 模块已集成到 XRK-AGT 项目中，无需单独安装。
+git clone https://github.com/XRK-AGT/wei-Core.git
 
 ### 使用方法
 
@@ -137,7 +139,7 @@ wei-Core 模块无需特殊配置，使用默认配置即可正常工作。
 
 ## 贡献
 
-欢迎提交 Issue 和 Pull Request 来改进 wei-Core 模块。
+欢迎提交 Issue 和 Pull Request 来改进 wei-Core 模块。我们致力于不断提升模块的性能和功能，为用户提供更好的体验。
 
 ## 许可
 
