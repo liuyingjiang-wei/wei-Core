@@ -1,4 +1,6 @@
+<div align="center">
 # wei-Core
+</div>
 
 <div align="center">
   <img src="https://cdn.pixabay.com/photo/2025/06/28/17/56/forest-9685700_1280.jpg" alt="wei-Core Logo" width="128" height="128">
