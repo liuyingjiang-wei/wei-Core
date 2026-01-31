@@ -5,6 +5,8 @@
   <img src="https://cdn.pixabay.com/photo/2025/06/28/17/56/forest-9685700_1280.jpg" alt="wei-Core Logo" width="1024" height="512">
 </div>
 
+<hr>
+
 ## 模块简介
 
 wei-Core XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态。
