@@ -1,14 +1,15 @@
-# hotboard-Core
-
 <div align="center">
-  <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20logo%20for%20hotboard-Core%20module%20with%20hot%20board%20icon%2C%20blue%20and%20white%20color%20scheme%2C%20clean%20design&image_size=square" alt="hotboard-Core Logo" width="128" height="128">
+  <h1>hotboard-Core</h1>
   <h3>热榜查询核心模块</h3>
   <p>快速获取多平台实时热点数据，掌握网络动态</p>
+  <img src="./img/12345678.jpg" alt="hotboard-Core Logo" width="1024" height="512">
 </div>
+
+<hr>
 
 ## 模块简介
 
-hotboard-Core 是 XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态。
+hotboard-Core XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态...
 
 ### 核心特性
 
@@ -37,29 +38,19 @@ hotboard-Core 是 XRK-AGT 平台的核心模块之一，专注于提供高效的
 ## 安装与使用
 
 ### 安装
-
-hotboard-Core 模块已集成到 XRK-AGT 项目中，无需单独安装。
+```bash
+# github
+git clone https://github.com/liuyingjiang-wei/hotboard-Core.git
+# gitee
+git clone https://gitee.com/liuyingjiang-wei/hotboard-core.git
+```
 
 ### 使用方法
 
 #### 通过 MCP 工具调用
 
-XRK-AGT 支持 MCP（Model Context Protocol）协议，可以在 Cursor 等 AI 编辑器中直接调用热榜查询功能。
+1. **查询热榜**：调用 `hotboard.get_hotboard` 工具，指定平台类型
 
-1. **配置 MCP 服务器**（已配置可跳过）：
-   ```json
-   {
-     "mcpServers": {
-       "xrk-agt": {
-         "url": "http://localhost:2537/api/mcp/jsonrpc",
-         "transport": "http",
-         "description": "XRK-AGT 智能助手服务器"
-       }
-     }
-   }
-   ```
-
-2. **调用热榜查询工具**：
    ```javascript
    // 调用示例：查询微博热搜
    const result = await context.callTool('hotboard.get_hotboard', {
@@ -67,7 +58,8 @@ XRK-AGT 支持 MCP（Model Context Protocol）协议，可以在 Cursor 等 AI �
    });
    ```
 
-3. **返回数据结构**：
+2. **返回数据结构**：
+
    ```javascript
    {
      "success": true,
@@ -87,6 +79,14 @@ XRK-AGT 支持 MCP（Model Context Protocol）协议，可以在 Cursor 等 AI �
    }
    ```
 
+## 插件列表
+
+| 插件名称 | 类型 | 功能说明 | 文件路径 |
+|---------|------|---------|----------|
+| hotboard | stream | 热榜查询工作流，支持多个平台的实时热榜数据 | stream/hotboard.js |
+| hotboard | http | 热榜查询 API，提供 RESTful 接口获取热榜数据 | http/hotboard.js |
+
+
 #### 通过 HTTP API 调用
 
 1. **获取指定平台热榜**：
@@ -103,7 +103,7 @@ XRK-AGT 支持 MCP（Model Context Protocol）协议，可以在 Cursor 等 AI �
 
 #### 通过 Web 界面访问
 
-直接在浏览器中访问：`http://localhost:2537/hotboard-Core/www/hotboard`
+直接在浏览器中访问：`http://localhost:2537/hotboard`
 
 ## 插件列表
 
@@ -180,7 +180,7 @@ flowchart TD
         C[Web界面访问]
     end
     
-    subgraph hotboard-Core模块
+    subgraph wei-Core模块
         D[hotboard stream插件]
         E[hotboard HTTP API]
         F[Web前端]
@@ -201,7 +201,7 @@ flowchart TD
 
 ## 配置说明
 
-hotboard-Core 模块无需特殊配置，使用默认配置即可正常工作。
+wei-Core 模块无需特殊配置，使用默认配置即可正常工作。
 
 ### 环境要求
 
@@ -224,7 +224,7 @@ hotboard-Core 模块无需特殊配置，使用默认配置即可正常工作。
 
 ## 贡献
 
-欢迎提交 Issue 和 Pull Request 来改进 hotboard-Core 模块。我们致力于不断提升模块的性能和功能，为用户提供更好的体验。
+欢迎提交 Issue 和 Pull Request 来改进 wei-Core 模块。我们致力于不断提升模块的性能和功能，为用户提供更好的体验。
 
 ### 开发指南
 
@@ -232,21 +232,3 @@ hotboard-Core 模块无需特殊配置，使用默认配置即可正常工作。
 2. 确保代码简洁，避免冗余和无用嵌套
 3. 提供完整的错误处理和边界情况处理
 4. 保持文档的同步更新
-
-## 许可
-
-hotboard-Core 模块遵循 XRK-AGT 项目的许可协议。
-
-## 联系方式
-
-如有问题或建议，可通过以下方式联系：
-
-- GitHub Issue：[XRK-AGT 项目](https://github.com/sunflowermm/XRK-AGT)
-- 官方文档：[XRK-AGT 文档](docs/README.md)
-
----
-
-<div align="center">
-  <p>由 <a href="https://github.com/sunflowermm/XRK-AGT">XRK-AGT 团队</a> 开发</p>
-  <p>© 2026 向日葵工作室</p>
-</div>
