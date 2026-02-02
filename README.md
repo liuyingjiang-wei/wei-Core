@@ -42,7 +42,7 @@ hotboard-Core XRK-AGT 平台的核心模块之一，专注于提供高效的热�
 # github
 git clone https://github.com/liuyingjiang-wei/hotboard-Core.git
 # gitee
-git clone https://gitee.com/liuyingjiang-wei/hotboard-core.git
+git clone https://gitee.com/liuyingjiang-wei/hotboard-core.git hotboard-Core
 ```
 
 ### 使用方法
