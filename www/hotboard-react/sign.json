@@ -1,0 +1,16 @@
+{
+  "id": "hotboard",
+  "name": "Hotboard-Core 前端开发示例",
+  "description": "热榜查询前端应用",
+  "enabled": true,
+  "command": "npm",
+  "args": ["run", "dev"],
+  "port": 5173,
+  "proxy": {
+    "mount": "/hotboard"
+  },
+  "env": {
+    "BROWSER": "none"
+  },
+  "autoRestart": true
+}
