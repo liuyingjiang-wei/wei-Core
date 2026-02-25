@@ -9,7 +9,7 @@
 
 ## 模块简介
 
-hotboard-Core XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态...
+hotboard-Core 是 XRK-AGT 平台的核心模块之一，专注于提供高效的热榜查询功能。它整合了多个主流平台的实时热点数据，帮助用户快速掌握网络动态...
 
 ### 核心特性
 
@@ -81,14 +81,6 @@ git clone https://gitcode.com/liuyingjiang/hotboard-Core.git
    }
    ```
 
-## 插件列表
-
-| 插件名称 | 类型 | 功能说明 | 文件路径 |
-|---------|------|---------|----------|
-| hotboard | stream | 热榜查询工作流，支持多个平台的实时热榜数据 | stream/hotboard.js |
-| hotboard | http | 热榜查询 API，提供 RESTful 接口获取热榜数据 | http/hotboard.js |
-
-
 #### 通过 HTTP API 调用
 
 1. **获取指定平台热榜**：
@@ -146,21 +138,28 @@ git clone https://gitcode.com/liuyingjiang/hotboard-Core.git
 
 ### 热榜查询页面
 
-- **访问路径**：`/hotboard-Core/www/hotboard`
+- **访问路径**：`/hotboard`
 - **功能**：提供直观的热榜查询界面，支持按分类选择平台，实时显示热榜数据
 - **特点**：
   - 响应式设计，适配桌面和移动设备
   - 分类展示平台，方便用户选择
   - 实时显示热榜排名、标题和热度
   - 支持刷新功能，获取最新数据
+  - 点击火花动画效果
 
-### 页面结构
+### 项目结构
 
-| 文件名称 | 功能说明 |
+| 文件/目录 | 功能说明 |
 |---------|---------|
-| `index.html` | 页面 HTML 结构 |
-| `styles.css` | 页面样式 |
-| `app.js` | 前端交互逻辑 |
+| `src/` | 前端源代码目录 |
+| `src/components/` | React 组件 |
+| `src/services/` | API 服务调用 |
+| `src/App.jsx` | 主应用组件 |
+| `src/main.jsx` | 应用入口 |
+| `src/index.css` | 全局样式 |
+| `index.html` | HTML 模板 |
+| `vite.config.js` | Vite 配置 |
+| `sign.json` | 前端项目配置 |
 
 ## 技术实现
 
@@ -171,6 +170,8 @@ git clone https://gitcode.com/liuyingjiang/hotboard-Core.git
 - **完整的错误处理**：处理网络错误、API 错误等情况
 - **数据格式化**：返回标准化的热榜数据结构
 - **上下文管理**：将查询结果存储到上下文，便于后续使用
+- **React 前端**：使用现代 React 技术栈构建用户界面
+- **Vite 构建工具**：提供快速的开发和构建体验
 
 ### 架构设计
 
@@ -182,10 +183,10 @@ flowchart TD
         C[Web界面访问]
     end
     
-    subgraph wei-Core模块
+    subgraph hotboard-Core模块
         D[hotboard stream插件]
         E[hotboard HTTP API]
-        F[Web前端]
+        F[React前端应用]
     end
     
     subgraph 数据源
@@ -203,7 +204,20 @@ flowchart TD
 
 ## 配置说明
 
-wei-Core 模块无需特殊配置，使用默认配置即可正常工作。
+### 前端项目配置
+
+前端项目通过 `sign.json` 文件配置，主要参数包括：
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `id` | 应用唯一标识 | - |
+| `name` | 应用名称 | - |
+| `command` | 启动命令 | `npm` |
+| `args` | 启动参数 | `["run", "dev"]` |
+| `port` | 开发服务器端口 | `5173` |
+| `proxy.mount` | 挂载路径 | `/hotboard` |
+| `env` | 环境变量 | `{"BROWSER": "none"}` |
+| `autoRestart` | 自动重启 | `true` |
 
 ### 环境要求
 
@@ -223,10 +237,11 @@ wei-Core 模块无需特殊配置，使用默认配置即可正常工作。
 | 版本 | 日期 | 说明 |
 |------|------|------|
 | v1.0.0 | 2026-01-30 | 初始版本，添加热榜查询功能 |
+| v1.1.0 | 2026-02-25 | 更新前端实现，使用 React 技术栈 |
 
 ## 贡献
 
-欢迎提交 Issue 和 Pull Request 来改进 wei-Core 模块。我们致力于不断提升模块的性能和功能，为用户提供更好的体验。
+欢迎提交 Issue 和 Pull Request 来改进 hotboard-Core 模块。我们致力于不断提升模块的性能和功能，为用户提供更好的体验。
 
 ### 开发指南
 
